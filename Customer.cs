@@ -7,6 +7,7 @@ namespace Assignment01
         private long telephoneNum;
         private string name;
         private int counter = 0;
+        private string orderaddress;
 
         public static int CustomerIdStatic = 0;
         public Order[] OrdersArray = new Order[50];
@@ -22,10 +23,10 @@ namespace Assignment01
         }
 
         #region method
-        public Order CreateOrder(OrderType typeName)
+        public Order CreateOrder(OrderType typeName, string addOrder)
         {
-
-            Order orderCreate = new Order(this.CustomerId, typeName);
+            orderaddress = addOrder;
+            Order orderCreate = new Order(this.CustomerId, typeName, orderaddress);
             OrdersArray[counter] = orderCreate;
             ++counter;
             return orderCreate;

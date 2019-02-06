@@ -19,13 +19,14 @@ namespace Assignment01
         public int OrderId { get; }
         public string orderType { get; }
 
-        public Order(Customer objectCus,OrderType objectType)
+        public Order(int cusId, OrderType objectType, string addressOrder)
         {
             orderIdCounter++;
             OrderId = orderIdCounter;
-            CustomerId = objectCus.CustomerId;
+            CustomerId = cusId;
             orderType = OrderTypeReturn(objectType);
             OrderTime = DateTime.Now;
+            Address = addressOrder;
 
         }
 
@@ -40,7 +41,7 @@ namespace Assignment01
             string a;
             switch (type)
             {
-                case OrderType.PhoneOrder :
+                case OrderType.PhoneOrder:
                     a = "Phone Order";
                     break;
                 default:
@@ -52,7 +53,7 @@ namespace Assignment01
         public decimal costCalculation()
         {
             decimal sum = 0;
-            for (int i = 0; i <counter;i++)    
+            for (int i = 0; i < counter; i++)
             {
                 sum += ItemsArray[i].ItemCost;
             }
@@ -60,10 +61,10 @@ namespace Assignment01
         }
         public DateTime? Deliver(bool deliverStatus)
         {
-            DateTime? varA=null;
+            DateTime? varA = null;
             if (deliverStatus == true)
             {
-               varA  = DateTime.Now;
+                varA = DateTime.Now;
             }
             else
             {
@@ -75,9 +76,9 @@ namespace Assignment01
         public void printOrderItem()
         {
             Console.WriteLine("***The Items include***");
-            for (int i = 0; i < counter;i++)
+            for (int i = 0; i < counter; i++)
             {
-                Console.Write("{0}; ",ItemsArray[i].ItemName);
+                Console.Write("{0}; ", ItemsArray[i].ItemName);
             }
             Console.WriteLine();
         }
@@ -89,6 +90,7 @@ namespace Assignment01
             Console.WriteLine(">>>The order[{0}] is made by customer# {1}", OrderId, CustomerId);
             Console.WriteLine(">>>Cost: {0:C2}", OrderCost);
             Console.WriteLine(">>>The order type is {0};", orderType);
+            Console.WriteLine(">>>Order deliver address is {0};", Address);
             Console.WriteLine(">>>Ordered at {0}, Delivery at {1}", OrderTime, DeliverTime);
             printOrderItem();
         }

@@ -6,10 +6,10 @@ namespace Assignment01
     {
         static void Main(string[] args)
         {
-            MenuItem chicken = new MenuItem("Chicken",10m) { Description = "always chicken" };
-            MenuItem caviar = new MenuItem("Caviar",8.8m) { Description = "try caviar" };
-            MenuItem avocado = new MenuItem("Avocado",3m) { Description = "turning yellow" };
-            MenuItem pop = new MenuItem("Pop",1m) { Description = "pep si" };
+            MenuItem chicken = new MenuItem("Chicken", 10m) { Description = "always chicken" };
+            MenuItem caviar = new MenuItem("Caviar", 8.8m) { Description = "try caviar" };
+            MenuItem avocado = new MenuItem("Avocado", 3m) { Description = "turning yellow" };
+            MenuItem pop = new MenuItem("Pop", 1m) { Description = "pep si" };
 
             OrderItem oItem1 = new OrderItem(chicken);
             OrderItem oItem2 = new OrderItem(caviar);
@@ -20,10 +20,10 @@ namespace Assignment01
             Customer cus2 = new Customer("Bill", "Eglington E5W9M3", 6471238900);
             Customer cus3 = new Customer("Mary", "London B1Y5T6", 6471238900);
 
-            Order order1 = cus1.CreateOrder(OrderType.PhoneOrder);
-            Order order2 = cus1.CreateOrder(OrderType.RestaurantOrder);
-            Order order3 = cus2.CreateOrder(OrderType.PhoneOrder);
-            Order order4 = cus3.CreateOrder(OrderType.RestaurantOrder);
+            Order order1 = cus1.CreateOrder(OrderType.PhoneOrder, "ABC ABC ABC");
+            Order order2 = cus1.CreateOrder(OrderType.RestaurantOrder, "EEEEE EEEEE");
+            Order order3 = cus2.CreateOrder(OrderType.PhoneOrder, "Eglington E5W9M");
+            Order order4 = cus3.CreateOrder(OrderType.RestaurantOrder, "CCCCC, CCCCC");
 
 
 
@@ -46,6 +46,15 @@ namespace Assignment01
             //cus1.CreateOrder(order2);
             //cus2.CreateOrder(order3);
             //cus3.CreateOrder(order4);
+
+            Console.WriteLine("*****************   Menu  ********************");
+            Console.WriteLine("||  Item          Cost         Description  ||");
+            chicken.GetInfor();
+            caviar.GetInfor();
+            avocado.GetInfor();
+            pop.GetInfor();
+            Console.WriteLine("*********  Order details as below  ***********");
+            Console.WriteLine();
 
             cus1.GetInfor();
             cus2.GetInfor();
