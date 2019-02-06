@@ -1,0 +1,16 @@
+﻿
+namespace Assignment01
+{
+    public class MenuItem
+    {
+        //private string name;
+        public string Description { get; set; }
+        public decimal BaseCost { get; }
+        public string Name { get;}
+        public MenuItem(string name,decimal cost)
+        {
+            Name = name;
+            BaseCost = cost;
+        }
+    }
+}
