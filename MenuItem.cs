@@ -5,19 +5,25 @@ namespace Assignment01
     public class MenuItem
     {
         //private string name;
-        public string Description { get; set; }
-        public decimal BaseCost { get; }
-        public string Name { get; }
-        public MenuItem(string name, decimal cost)
+        private string description;
+        private decimal baseCost;
+        private string name;
+
+        public string Description { get { return description; } 
+                                    set { description = value; } }
+        public decimal BaseCost { get { return baseCost; } }
+        public string Name { get { return name; }}
+
+        public MenuItem(string name,decimal cost)
         {
-            Name = name;
-            BaseCost = cost;
+            this.name = name;
+            baseCost = cost;
         }
         public void GetInfor()
         {
-            Console.Write("||{0,8}", Name);
-            Console.Write("{0,13:C2}", BaseCost);
-            Console.Write("{0,20} ||", Description);
+            Console.Write("||{0,8}", name);
+            Console.Write("{0,13:C2}", baseCost);
+            Console.Write("{0,20} ||", description);
             Console.WriteLine();
         }
     }

@@ -9,30 +9,51 @@ namespace Assignment01
         private static int orderIdCounter = 0;
         private int counter = 0;
 
-        public DateTime? DeliverTime { get => Deliver(delivered); }
-        public DateTime OrderTime { get; }
-        public int CustomerId { get; }
-        public string Address { get; set; }
-        public OrderItem[] ItemsArray = new OrderItem[50];
-        public decimal OrderCost { get { return costCalculation(); } }
-        public bool delivered { get; set; }
-        public int OrderId { get; }
-        public string orderType { get; }
+        private DateTime? deliverTime { get => Deliver(delivered); }
+        private DateTime orderTime { get; }
+        private int customerId { get; }
+        private string address { get; set; }
+        private OrderItem[] itemsArray = new OrderItem[50];
+        private decimal orderCost { get { return costCalculation(); } }
+        private bool delivered;
+        private int orderId { get; }
+        private string orderType { get; }
 
-        public Order(int cusId, OrderType objectType, string addressOrder)
+        public int OrderId { get { return orderId; } }
+        public bool Delivered { get { return delivered; } 
+                                set { delivered = value; } }
+
+        #region delete
+        //public DateTime? DeliverTime { get { return deliverTime; } }
+        //public DateTime OrderTime { get { return orderTime; } }
+        //public int CustomerId { get { return customerId; } }
+        //public string Address { get { return address; } }
+        //public OrderItem[] ItemsArray { get { return itemsArray; }}
+        //public decimal OrderCost { get { return orderCost; } }
+
+        //public string OrderType { get { return orderType; }}
+        #endregion
+
+        private Order()
         {
             orderIdCounter++;
-            OrderId = orderIdCounter;
-            CustomerId = cusId;
+            orderId = orderIdCounter;
+            orderTime = DateTime.Now;
+        }
+
+        public Order(int cusId, OrderType objectType, Address address):this()
+        {
+
+            customerId = cusId;
             orderType = OrderTypeReturn(objectType);
-            OrderTime = DateTime.Now;
-            Address = addressOrder;
+
+            this.address = string.Format("{0}, {1}", address.RoadInfor, address.AddressEmail); ;
 
         }
 
         public void AddOrderItem(OrderItem item)
         {
-            ItemsArray[counter] = item;
+            itemsArray[counter] = item;
             counter++;
         }
 
@@ -41,7 +62,7 @@ namespace Assignment01
             string a;
             switch (type)
             {
-                case OrderType.PhoneOrder:
+                case OrderType.PhoneOrder :
                     a = "Phone Order";
                     break;
                 default:
@@ -53,18 +74,18 @@ namespace Assignment01
         public decimal costCalculation()
         {
             decimal sum = 0;
-            for (int i = 0; i < counter; i++)
+            for (int i = 0; i <counter;i++)    
             {
-                sum += ItemsArray[i].ItemCost;
+                sum += itemsArray[i].ItemCost;
             }
             return sum;
         }
-        public DateTime? Deliver(bool deliverStatus)
+        public DateTime? Deliver(bool delivered)
         {
-            DateTime? varA = null;
-            if (deliverStatus == true)
+            DateTime? varA=null;
+            if (delivered == true)
             {
-                varA = DateTime.Now;
+               varA  = DateTime.Now;
             }
             else
             {
@@ -76,9 +97,9 @@ namespace Assignment01
         public void printOrderItem()
         {
             Console.WriteLine("***The Items include***");
-            for (int i = 0; i < counter; i++)
+            for (int i = 0; i < counter;i++)
             {
-                Console.Write("{0}; ", ItemsArray[i].ItemName);
+                Console.Write("{0}; ",itemsArray[i].ItemName);
             }
             Console.WriteLine();
         }
@@ -87,11 +108,11 @@ namespace Assignment01
         {
 
             Console.WriteLine("==========================");
-            Console.WriteLine(">>>The order[{0}] is made by customer# {1}", OrderId, CustomerId);
-            Console.WriteLine(">>>Cost: {0:C2}", OrderCost);
+            Console.WriteLine(">>>The order[{0}] is made by customer# {1}", orderId, customerId);
+            Console.WriteLine(">>>Cost: {0:C2}", orderCost);
             Console.WriteLine(">>>The order type is {0};", orderType);
-            Console.WriteLine(">>>Order deliver address is {0};", Address);
-            Console.WriteLine(">>>Ordered at {0}, Delivery at {1}", OrderTime, DeliverTime);
+            Console.WriteLine(">>>Order deliver address is {0};", address);
+            Console.WriteLine(">>>Ordered at {0}, Delivery at {1}", orderTime, deliverTime);
             printOrderItem();
         }
     }

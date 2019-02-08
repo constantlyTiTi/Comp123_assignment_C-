@@ -7,27 +7,33 @@ namespace Assignment01
         private long telephoneNum;
         private string name;
         private int counter = 0;
-        private string orderaddress;
+        private int customerId { get; }
+        private  Order[] ordersArray = new Order[50];
 
         public static int CustomerIdStatic = 0;
-        public Order[] OrdersArray = new Order[50];
-        public int CustomerId { get; }
+        public Order[] OrdersArray { get { return ordersArray; }}
+        public int CustomerId{get { return customerId; }}
 
-        public Customer(string name, string address, long telephoneNum)
+       
+
+        private Customer()
         {
             CustomerIdStatic++;
-            CustomerId = CustomerIdStatic;
+            customerId = CustomerIdStatic;
+        }
+        public Customer(string name, Address address, long telephoneNum):this()
+        {
+
             this.name = name;
-            this.address = address;
+            this.address = string.Format("{0}, {1}",address.RoadInfor,address.AddressEmail);
             this.telephoneNum = telephoneNum;
         }
 
         #region method
-        public Order CreateOrder(OrderType typeName, string addOrder)
+        public Order CreateOrder(OrderType typeName, Address address)
         {
-            orderaddress = addOrder;
-            Order orderCreate = new Order(this.CustomerId, typeName, orderaddress);
-            OrdersArray[counter] = orderCreate;
+            Order orderCreate = new Order(this.customerId, typeName, address);
+            ordersArray[counter] = orderCreate;
             ++counter;
             return orderCreate;
         }
@@ -37,14 +43,14 @@ namespace Assignment01
             Console.WriteLine("******Order******");
             for (int i = 0; i < counter;i++)
             {
-                Console.Write("{0}; ", OrdersArray[i].OrderId);
+                Console.Write("{0}; ", ordersArray[i].OrderId);
             }
             Console.WriteLine();
         }
         public void GetInfor()
         {
             Console.WriteLine("==========================");
-            Console.WriteLine("The customer ID is {0};", CustomerId);
+            Console.WriteLine("The customer ID is {0};", customerId);
             Console.WriteLine("Customer Name is {0}", name);
             Console.WriteLine("Telephone No. is [{0}]", telephoneNum);
             Console.WriteLine("Address: {0};", address);

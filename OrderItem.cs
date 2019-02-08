@@ -3,13 +3,16 @@ namespace Assignment01
 {
     public class OrderItem
     {
-        public string ItemName { get; }
-        public decimal ItemCost { get; }
+        private string itemName;
+        private decimal itemCost;
+
+        public string ItemName { get { return itemName; } }
+        public decimal ItemCost { get { return itemCost; } }
 
         public OrderItem(MenuItem a)
         {
-            ItemName = a.Name;
-            ItemCost = a.BaseCost;
+            itemName = a.Name;
+            itemCost = a.BaseCost;
             
         }
 
