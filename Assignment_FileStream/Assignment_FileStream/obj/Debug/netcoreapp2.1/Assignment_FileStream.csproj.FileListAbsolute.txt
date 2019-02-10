@@ -1,0 +1,11 @@
+/Users/tingli/Desktop/homework/COMP123/Comp123 assignment C#/Assignment_FileStream/Assignment_FileStream/obj/Debug/netcoreapp2.1/Assignment_FileStream.csprojAssemblyReference.cache
+/Users/tingli/Desktop/homework/COMP123/Comp123 assignment C#/Assignment_FileStream/Assignment_FileStream/obj/Debug/netcoreapp2.1/Assignment_FileStream.csproj.CoreCompileInputs.cache
+/Users/tingli/Desktop/homework/COMP123/Comp123 assignment C#/Assignment_FileStream/Assignment_FileStream/obj/Debug/netcoreapp2.1/Assignment_FileStream.AssemblyInfoInputs.cache
+/Users/tingli/Desktop/homework/COMP123/Comp123 assignment C#/Assignment_FileStream/Assignment_FileStream/obj/Debug/netcoreapp2.1/Assignment_FileStream.AssemblyInfo.cs
+/Users/tingli/Desktop/homework/COMP123/Comp123 assignment C#/Assignment_FileStream/Assignment_FileStream/bin/Debug/netcoreapp2.1/Assignment_FileStream.deps.json
+/Users/tingli/Desktop/homework/COMP123/Comp123 assignment C#/Assignment_FileStream/Assignment_FileStream/bin/Debug/netcoreapp2.1/Assignment_FileStream.runtimeconfig.json
+/Users/tingli/Desktop/homework/COMP123/Comp123 assignment C#/Assignment_FileStream/Assignment_FileStream/bin/Debug/netcoreapp2.1/Assignment_FileStream.runtimeconfig.dev.json
+/Users/tingli/Desktop/homework/COMP123/Comp123 assignment C#/Assignment_FileStream/Assignment_FileStream/bin/Debug/netcoreapp2.1/Assignment_FileStream.dll
+/Users/tingli/Desktop/homework/COMP123/Comp123 assignment C#/Assignment_FileStream/Assignment_FileStream/bin/Debug/netcoreapp2.1/Assignment_FileStream.pdb
+/Users/tingli/Desktop/homework/COMP123/Comp123 assignment C#/Assignment_FileStream/Assignment_FileStream/obj/Debug/netcoreapp2.1/Assignment_FileStream.dll
+/Users/tingli/Desktop/homework/COMP123/Comp123 assignment C#/Assignment_FileStream/Assignment_FileStream/obj/Debug/netcoreapp2.1/Assignment_FileStream.pdb
