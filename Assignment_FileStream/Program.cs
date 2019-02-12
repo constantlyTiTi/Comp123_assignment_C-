@@ -28,7 +28,7 @@ namespace Assignment_FileStream
             {
                 Console.WriteLine("File [{0}] exists", fileName);
                 courseFile = new FileStream
-                   // (fileName, FileMode.OpenOrCreate, FileAccess.ReadWrite); --will open file and edit on the file, use could set from which line to be updated
+                   // (fileName, FileMode.OpenOrCreate, FileAccess.ReadWrite); --will open file and edit on the file, user could set from which line to be updated
                    (fileName, FileMode.Create, FileAccess.ReadWrite); //will truncate the intend file
             }
             else
