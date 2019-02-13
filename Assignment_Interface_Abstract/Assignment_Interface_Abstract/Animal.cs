@@ -27,31 +27,30 @@ namespace Assignment_Interface_Abstract
 
         public override string ToString()
         {
-            string outPut;
-            string place;
-            if (this.IsWild()==true)
-            {
-                place = "Wild";
-            }
-            else
-            {
-                if (this.location==Location.House)
-                {
-                    place = "House";
-                }
-                else
-                {
-                    place = "Zoo";
-                }
-            }
+            #region delete
+            // string outPut;
+            // string place;
+            // if (this.IsWild()==true)
+            // {
+            //     place = "Wild";
+            // }
+            // else
+            // {
+            //     if (this.location==Location.House)
+            //     {
+            //         place = "House";
+            //     }
+            //     else
+            //     {
+            //         place = "Zoo";
+            //     }
+            // }
 
+#endregion
 
-
-            outPut = string.Format("The {0} goes {1} in the {2}", 
-                                   name, MakeSound(),place);
+            return string.Format("The {0} goes {1} in the {2}", 
+                                   name, MakeSound(),location);
           
-
-            return outPut;
         }
     }
 }

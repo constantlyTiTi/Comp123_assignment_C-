@@ -3,16 +3,16 @@ namespace Assignment_Interface_Abstract
 {
     public abstract class Feline:Animal
     {
-        private int FelineLeg;
+        private int felineLeg;
 
         public Feline()
         {
-            FelineLeg=4;
+            felineLeg=4;
         }
 
         public override int LegCount()
         {
-            return FelineLeg;
+            return felineLeg;
         }
 
     }

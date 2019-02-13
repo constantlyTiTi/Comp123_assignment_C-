@@ -7,7 +7,7 @@ namespace Assignment_Interface_Abstract
         {
             this.Name = "cat";
             this.LegCount();
-            this.ToString();
+            //this.ToString(); reducdance
         }
         public override bool IsWild()
         {

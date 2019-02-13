@@ -7,7 +7,7 @@ namespace Assignment_Interface_Abstract
         {
             this.Name = "Pigeon";
             this.LegCount();
-            this.ToString();
+            //this.ToString();reducdance
         }
 
         public void FlyAway()
