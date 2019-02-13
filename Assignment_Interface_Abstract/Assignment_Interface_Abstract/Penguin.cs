@@ -9,14 +9,14 @@ namespace Assignment_Interface_Abstract
             // "Penguin"; 
             this.LegCount();
             this.Name = "Penguin";
-            this.ToString();
+            //this.ToString(); reducdance
         }
 
         public override string MakeSound()
         {
             return "Honk";
         }
-        public override bool IsWild()
+        public override bool IsWild() //this could be written in father class, but assignment asks for this
         {
             bool checkPlace = true;
             if (this.Location == Location.Wild)
