@@ -49,8 +49,8 @@ namespace Assignment_FileStream
 
             FileStream mycourseFileStream;
             mycourseFileStream = new FileStream
-                (mycourseFileStream, FileMode.OpenOrCreate, FileAccess.ReadWrite);
-            StreamWriter mycourseWriter = new StreamWriter(mycourseFile);
+                (mycourseFile, FileMode.OpenOrCreate, FileAccess.ReadWrite);
+            StreamWriter mycourseWriter = new StreamWriter(mycourseFileStream);
             foreach (string name in courseTitle)
             {
                 mycourseWriter.WriteLine(name);
@@ -59,7 +59,7 @@ namespace Assignment_FileStream
             mycourseWriter.Close();
             mycourseFileStream.Close();
 
-            mycourseFileStream = new FileStream(mycourseFileStream, FileMode.Open);
+            mycourseFileStream = new FileStream(myCourseFile, FileMode.Open);
             StreamReader mycourseReader = new StreamReader(mycourseFileStream);
 
             courseFile = new FileStream(fileName, FileMode.Open);
