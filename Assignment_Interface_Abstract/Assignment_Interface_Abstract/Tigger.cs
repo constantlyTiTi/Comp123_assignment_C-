@@ -5,7 +5,7 @@ namespace Assignment_Interface_Abstract
     {
         public Tigger():base("Tigger")
         {
-            this.LegCount();
+            //this.LegCount();
            //this.ToString(); reducdance
         }
 

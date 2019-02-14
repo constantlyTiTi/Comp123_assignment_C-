@@ -5,7 +5,7 @@ namespace Assignment_Interface_Abstract
     {
         public Pigeon():base("Pigeon")
         {
-            this.LegCount();
+            //this.LegCount();
             //this.ToString();reducdance
         }
 

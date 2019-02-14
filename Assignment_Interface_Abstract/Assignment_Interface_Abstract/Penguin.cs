@@ -7,7 +7,7 @@ namespace Assignment_Interface_Abstract
         public Penguin():base ("Penguin")
         {
             // "Penguin"; 
-            this.LegCount();
+            //this.LegCount();
             //this.ToString(); reducdance
         }
 

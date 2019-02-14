@@ -5,7 +5,7 @@ namespace Assignment_Interface_Abstract
     {
         public Cat():base("cat")
         {
-            this.LegCount();
+           // this.LegCount();
             //this.ToString(); reducdance
         }
         public override bool IsWild()
