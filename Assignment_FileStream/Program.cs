@@ -37,6 +37,7 @@ namespace Assignment_FileStream
                 courseFile = new FileStream
                     (fileName, FileMode.CreateNew, FileAccess.ReadWrite);
             }
+            courseFile.Close();//close stream
 
             #endregion
             #region Q4&Q5
@@ -46,9 +47,9 @@ namespace Assignment_FileStream
             string myCourseFile = "mycourse";
             uint counter=0;
 
-            FileStream mycourseFile;
-            mycourseFile = new FileStream
-                (myCourseFile, FileMode.OpenOrCreate, FileAccess.ReadWrite);
+            FileStream mycourseFileStream;
+            mycourseFileStream = new FileStream
+                (mycourseFileStream, FileMode.OpenOrCreate, FileAccess.ReadWrite);
             StreamWriter mycourseWriter = new StreamWriter(mycourseFile);
             foreach (string name in courseTitle)
             {
@@ -56,10 +57,10 @@ namespace Assignment_FileStream
                 counter++;
             }
             mycourseWriter.Close();
-            mycourseFile.Close();
+            mycourseFileStream.Close();
 
-            mycourseFile = new FileStream(myCourseFile, FileMode.Open);
-            StreamReader mycourseReader = new StreamReader(mycourseFile);
+            mycourseFileStream = new FileStream(mycourseFileStream, FileMode.Open);
+            StreamReader mycourseReader = new StreamReader(mycourseFileStream);
 
             courseFile = new FileStream(fileName, FileMode.Open);
             StreamWriter courseWriter = new StreamWriter(courseFile);
@@ -69,7 +70,7 @@ namespace Assignment_FileStream
                 courseWriter.WriteLine (mycourseReader.ReadLine());
             }
             mycourseReader.Close();
-            mycourseFile.Close();
+            mycourseFileStream.Close();
             courseWriter.Close();
             courseFile.Close();
             #endregion
