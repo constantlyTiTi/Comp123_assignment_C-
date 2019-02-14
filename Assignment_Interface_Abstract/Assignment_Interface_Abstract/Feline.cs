@@ -3,12 +3,13 @@ namespace Assignment_Interface_Abstract
 {
     public abstract class Feline:Animal
     {
-        private int felineLeg;
+        private const int felineLeg=4;
 
-        public Feline()
+        public Feline(string name)
         {
-            felineLeg=4;
+            Name=name;
         }
+       
 
         public override int LegCount()
         {

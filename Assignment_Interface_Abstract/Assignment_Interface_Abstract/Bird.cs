@@ -3,15 +3,14 @@ namespace Assignment_Interface_Abstract
 {
     public abstract class Bird :Animal
     {
-        private int birdLeg;
 
-        public Bird()
+        public Bird(string name)
         {
-            birdLeg = 2;
+            Name=name;
         }
         public override int LegCount()
         {
-            return birdLeg;
+            return 2;
         }
     }
 }

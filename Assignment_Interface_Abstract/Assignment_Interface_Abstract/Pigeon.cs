@@ -3,9 +3,8 @@ namespace Assignment_Interface_Abstract
 {
     public class Pigeon : Bird, IFlight
     {
-        public Pigeon()
+        public Pigeon():base("Pigeon")
         {
-            this.Name = "Pigeon";
             this.LegCount();
             //this.ToString();reducdance
         }

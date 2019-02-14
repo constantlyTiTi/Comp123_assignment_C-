@@ -4,11 +4,10 @@ namespace Assignment_Interface_Abstract
     public class Penguin:Bird
     {
     
-        public Penguin()
+        public Penguin():base ("Penguin")
         {
             // "Penguin"; 
             this.LegCount();
-            this.Name = "Penguin";
             //this.ToString(); reducdance
         }
 

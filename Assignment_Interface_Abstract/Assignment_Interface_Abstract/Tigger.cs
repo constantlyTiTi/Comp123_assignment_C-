@@ -3,9 +3,8 @@ namespace Assignment_Interface_Abstract
 {
     public class Tigger:Feline
     {
-        public Tigger()
+        public Tigger():base("Tigger")
         {
-            this.Name = "Tigger";
             this.LegCount();
            //this.ToString(); reducdance
         }

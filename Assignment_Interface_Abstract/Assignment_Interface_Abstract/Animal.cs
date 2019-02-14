@@ -3,23 +3,22 @@ namespace Assignment_Interface_Abstract
 {
     public abstract class Animal :IAnimal
     {
-        private string name;
-        private Location location;
+       // private string name;
+        //private Location location;
 
         public Location Location 
         {
-            get { return location; }
-            set { location = value; }
+            get;
+            set;
         }
         public string Name 
         { 
-            get { return name; }
-            set { name = value; }
+            get; set;
         }
 
-       public Animal()
+       public  Animal(string name)
         {
-
+            Name=name;
         }
         public abstract bool IsWild();
         public abstract int LegCount();
@@ -49,7 +48,7 @@ namespace Assignment_Interface_Abstract
 #endregion
 
             return string.Format("The {0} goes {1} in the {2}", 
-                                   name, MakeSound(),location);
+                                   Name, MakeSound(),Location);
           
         }
     }
