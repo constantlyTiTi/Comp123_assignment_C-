@@ -5,9 +5,8 @@ namespace Assignment_Interface_Abstract
     {
         private const int felineLeg=4;
 
-        public Feline(string name)
+        public Feline(string name):base(name)
         {
-            Name=name;
         }
        
 

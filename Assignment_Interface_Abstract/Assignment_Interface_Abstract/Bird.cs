@@ -3,10 +3,9 @@ namespace Assignment_Interface_Abstract
 {
     public abstract class Bird :Animal
     {
-
-        public Bird(string name)
+       
+        public Bird(string name):base(name)
         {
-            Name=name;
         }
         public override int LegCount()
         {

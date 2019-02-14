@@ -3,9 +3,8 @@ namespace Assignment_Interface_Abstract
 {
     public class Cat:Feline
     {
-        public Cat()
+        public Cat():base("cat")
         {
-            this.Name = "cat";
             this.LegCount();
             //this.ToString(); reducdance
         }

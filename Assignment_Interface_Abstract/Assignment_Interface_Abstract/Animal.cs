@@ -13,7 +13,7 @@ namespace Assignment_Interface_Abstract
         }
         public string Name 
         { 
-            get; set;
+            get;
         }
 
        public  Animal(string name)
