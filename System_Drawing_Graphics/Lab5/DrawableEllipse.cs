@@ -23,9 +23,15 @@ namespace Lab5
                                             //      and you dont need to use Idrawable.Draw() here as it could be 
                                            //      inherited from IDrawable class
         {
-            Pen pen = new Pen(_color);
             if (_filled==true)
-            graphics.DrawEllipse(pen, _boundingRectangle);
+            {
+                graphics.FillEllipse(new SolidBrush(_color), _boundingRectangle);
+            }
+            else
+            {
+                graphics.DrawEllipse(new Pen(_color), _boundingRectangle);
+            }
+           
         }
     }
 }

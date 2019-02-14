@@ -18,9 +18,16 @@ namespace Lab5
         public void Draw(IGraphics graphics) //if you have public youd better remove Idrawable otherwise there will be error.
                                                 // I dont understand why some of the codes have public, but no public here
         {
-            Pen pen = new Pen(_color);
+
             if (_filled==true)
-            graphics.DrawRectangle(pen, _boundingRectangle);
+            {
+                graphics.FillRectangle(new SolidBrush(_color), _boundingRectangle);
+            }
+            else
+            {
+                graphics.DrawRectangle(new Pen(_color), _boundingRectangle);
+            }
+
         }
     }
 }
