@@ -9,7 +9,7 @@ namespace Lab5
 {
     public class DrawableBezier: IDrawable
     {
-        Pen _color; // Ting: feel this should be pen
+        Color _color; 
         Point _curveStart;
         Point _controlFirst;
         Point _controlSecond;
