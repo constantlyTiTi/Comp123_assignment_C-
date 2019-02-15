@@ -17,7 +17,7 @@ namespace Lab5
 
         public DrawableBezier(Color color, Point start, Point first, Point second, Point end)
         {
-            _color =new Pen(color);
+            _color =color;
             _curveStart = start;
             _controlFirst = first;
             _controlSecond = second;
@@ -25,7 +25,7 @@ namespace Lab5
         }
         public void Draw(IGraphics graphics)//Ting: it seems to be inherient from interface 
         {
-            graphics.DrawBezier(_color, _curveStart, _curveStart, _controlSecond, _curveEnd);
+            graphics.DrawBezier(new Pen(_color), _curveStart, _curveStart, _controlSecond, _curveEnd);
 
         }
     }
