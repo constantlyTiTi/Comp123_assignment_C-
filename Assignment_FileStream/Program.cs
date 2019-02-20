@@ -18,7 +18,8 @@ namespace Assignment_FileStream
             //fileName = Console.ReadLine();
 
             #region Q1 Write a program to create a file Courses.txt.
-            File.CreateText(fileName);
+            var fileClose=File.CreateText(fileName);
+            fileClose.Close();
             FileStream courseFile;
             #endregion
             #region Q2&Q3
